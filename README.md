@@ -2,7 +2,7 @@
 Sistema web para gerenciar vendas e produtos em festas escolares. Possui login de administradores, cadastro de produtos com fotos, registro de vendas, fechamento de caixa e geração de relatórios PDF/Excel. Hospedado no Cloudflare Pages com Workers KV para armazenamento persistente.
 
 ## Recursos
-- **Login simples:** Acesso para administradores (admin01/senha01 e admin02/senha02).
+- **Login simples:** Acesso para administradores.
 - **Cadastro de Produtos:** Nome, preço (R$) e upload de foto (convertida para Base64).
 - **Registro de Vendas:** Seleção de produtos, métodos de pagamento e registro de vendas.
 - **Fechamento de Caixa:** Controle do valor inicial e fechamento com total de vendas.
