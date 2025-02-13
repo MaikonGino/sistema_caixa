@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema de Caixa - Festa Junina</title>
+  <!-- QZ Tray (para impressão) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qz-tray/2.1.0/qz-tray.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Tela de Login -->
+  <div id="login-container">
+    <!-- Logotipo exibido no login -->
+    <img src="assets/logo.png" alt="Logotipo" class="login-logo">
+    <h2>Login</h2>
+    <!-- Para este exemplo, o "email" é o usuário -->
+    <input type="text" id="email" placeholder="Usuário (ex: admin01)" />
+    <input type="password" id="password" placeholder="Senha" />
+    <button id="loginBtn">Entrar</button>
+    <p id="loginMessage"></p>
+  </div>
+
+  <!-- Aplicação Principal -->
+  <div id="app" style="display:none;">
+    <!-- Header com logotipo e título -->
+    <header>
+      <img src="assets/logo.png" alt="Logotipo" class="logo">
+      <h1>Sistema de Caixa - Festa Junina</h1>
+    </header>
+    <!-- Navegação por abas -->
+    <nav>
+      <button class="tablink" onclick="openTab('caixa', event)">Caixa</button>
+      <button class="tablink" onclick="openTab('vendas', event)">Vendas por Categoria</button>
+      <button class="tablink" onclick="openTab('fiados', event)">Fechamento Fiados</button>
+      <button class="tablink" onclick="openTab('produtos', event)">Gerenciar Produtos</button>
+    </nav>
+    
+    <!-- Conteúdo das Abas -->
+    <section id="conteudo">
+      <!-- Aba Caixa -->
+      <div id="caixa" class="tabcontent" style="display:none;">
+        <h2>Caixa</h2>
+        <!-- Seção de Abertura/Fechamento do Caixa -->
+        <div id="cash-register-actions">
+          <p id="cash-register-status">Caixa está fechado.</p>
+          <div id="cash-register-controls">
+            <div id="open-controls">
+              <input type="number" id="initial-amount" placeholder="Valor inicial" />
+              <button id="open-cash-btn">Abrir Caixa</button>
+            </div>
+            <div id="close-controls" style="display:none;">
+              <input type="number" id="sales-total" placeholder="Valor das Vendas" />
+              <button id="close-cash-btn">Fechar Caixa</button>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <!-- Área do Caixa para vendas -->
+        <div id="produtos-lista"></div>
+        <div>
+          <h3>Forma de Pagamento</h3>
+          <select id="forma-pagamento">
+            <option value="dinheiro">Dinheiro</option>
+            <option value="cartao">Cartão</option>
+            <option value="pix">PIX</option>
+            <option value="fiado">Fiado</option>
+          </select>
+        </div>
+        <div id="fiado-container" style="display:none;">
+          <input type="text" id="nome-fiado" placeholder="Nome do Cliente (Fiado)" />
+          <p id="fiado-alert" style="color:red; display:none;">Nome já existe. Informe um nome diferenciado.</p>
+        </div>
+        <button id="finalizarVenda">Finalizar Venda</button>
+      </div>
+      
+      <!-- Aba Vendas por Categoria -->
+      <div id="vendas" class="tabcontent" style="display:none;">
+        <h2>Vendas por Categoria</h2>
+        <div id="lista-vendas"></div>
+      </div>
+      
+      <!-- Aba Fechamento Fiados -->
+      <div id="fiados" class="tabcontent" style="display:none;">
+        <h2>Fechamento Fiados</h2>
+        <div id="lista-fiados"></div>
+      </div>
+      
+      <!-- Aba Gerenciar Produtos -->
+      <div id="produtos" class="tabcontent" style="display:none;">
+        <h2>Gerenciar Produtos</h2>
+        <div id="lista-produtos"></div>
+        <h3>Adicionar Produto</h3>
+        <input type="text" id="produto-nome" placeholder="Nome do Produto" />
+        <input type="number" id="produto-preco" placeholder="Preço (R$)" step="0.01" />
+        <input type="file" id="produto-foto" accept="image/*" />
+        <button id="adicionar-produto">Adicionar</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Script principal -->
+  <script src="main.js"></script>
+</body>
+</html>

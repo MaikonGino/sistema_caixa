@@ -1,0 +1,235 @@
+/* Reset moderno */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #1a1a1a;
+    min-height: 100vh;
+}
+
+/* Login */
+#login-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Logo no login */
+.login-logo {
+    width: 120px;
+    margin-bottom: 1rem;
+}
+
+#login-container h2 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+#login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+#login-container input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+#loginBtn {
+    background: #3498db;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 1rem;
+    width: 100%;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+#loginBtn:hover {
+    background: #2980b9;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    height: 60px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Navegação */
+nav {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 8px;
+}
+
+nav .tablink {
+    background: #f8f9fa;
+    color: #2c3e50;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+nav .tablink:hover {
+    background: #e9ecef;
+    transform: translateY(-1px);
+}
+
+nav .tablink.active {
+    background: #3498db;
+    color: white;
+}
+
+/* Conteúdo das abas */
+.tabcontent {
+    padding: 2rem;
+    background: white;
+    margin: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Listas de itens */
+#produtos-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+#produtos-lista button {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+#produtos-lista button:hover {
+    border-color: #3498db;
+    transform: translateY(-2px);
+}
+
+/* Formulários */
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    margin: 8px 0;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Estilo para o input file */
+input[type="file"] {
+    padding: 6px;
+}
+
+/* Mensagens */
+.alert {
+    padding: 12px;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Lista de vendas */
+#lista-vendas, #lista-fiados {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#lista-vendas div, #lista-fiados div {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+/* Exibição de produtos (imagem e texto) */
+.product-item {
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    max-height: 120px;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+}
+
+/* Cash Register Actions */
+#cash-register-actions {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #e9ecef;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#cash-register-actions input {
+  width: auto;
+  margin: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+    
+    .tabcontent {
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+}
