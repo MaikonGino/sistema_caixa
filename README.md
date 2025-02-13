@@ -44,7 +44,7 @@ Sistema web para gerenciar vendas e produtos em festas escolares. Possui login d
 ## Uso
 
 - **Login:** Acesse a URL do projeto e faça login.
-- 
+  
 - **Gerenciamento:** Utilize as abas para:
   - Abrir/fechar o caixa.
   - Adicionar e gerenciar produtos (com upload de foto).
